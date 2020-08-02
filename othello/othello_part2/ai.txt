@@ -1,0 +1,24 @@
+1.Did you attempt to make your computer player very smart -- i.e., do something more clever than just pick a random legal move?
+
+Yes, I tried to make the computer player to flip tiles as many as possible every time the computer made a legal move.
+
+
+2.If so, were you able to accomplish this? Is your computer player as smart as you would like?
+
+I think so.
+
+
+3.How did you determine which piece to play next? Tell us about your “pick next move” algorithm
+
+For the human player, I determine if the next move is legal by traversing the entire game board. I create two vector list for x coordinations and y coordinations. When the user makes his next move, the code would traverse all possible and valid position by adding the elements from two vector list (nested loop) using inBoard() function to make sure every move is in the game board. At the same time, I used a dictionary to store legal moves and corresponding flip counts. Tiles would be flipped automatically after the user made one legal move.
+
+For the computer player, I used the same logic and data structure to determine if the next move is legal. But for the computer's move, I tried to make it flips the most black tiles every time. The code would traverse the dictionary which stores all possible tiles and corresponding flip counts and would find coordinations for the max_flip count. It would be computer player's next move.
+
+4.How often did your computer program beat you, or your friends, or whoever tested it out for you?
+
+The winning rate for computer is almost 80%. (I tried to play 10 times and lost 8 times.)
+
+
+5.How would you improve it in the future?
+
+I think there is a potential to improve the time complexity and space complexity. For now, it still needs some time for the computer player to think about what the next step is and I can hear the noise from the computer radiator when I was playing the game. I hope I can find a better algorithm to avoid to check 8 directions of one tile every time.

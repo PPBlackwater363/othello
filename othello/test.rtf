@@ -1,0 +1,107 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11760\viewh14260\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97Board Test \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+def test_constructor():\
+	Input:\
+ 	WIDTH = 400\
+	HEIGHT = 400\
+	NUM = 4\
+	Strokeweight = 4\
+	b = Board(WIDTH, HEIGHT, NUM,Strokeweight)\
+	\
+	Expected Return Value:\
+	b.WIDTH = 400\
+	b.HEIGHT = 400\
+	b.NUM = 4\
+	b.StrokeWeight = 4\
+	\
+	Unexpected Return Value:\
+	for each number, they did not assign to the right attribute.\
+\
+def test_display():\
+	Input:\
+	valid i which in range (1, self.NUM):\
+	Expected Return Value:\
+	cell * i\
+	Unexpected Return Value:\
+	Any number not equal to cell * i\
+\
+	\
+Tile Test \
+\
+def test_constructor():\
+	Input:\
+ 	WIDTH = 400\
+	NUM = 4\
+	Color = 0\
+	t = tile(WIDTH, NUM, NUM,Color)\
+	Expected Return Value:\
+	t.Board_size = 400\
+	t.Board_num = 4\
+	t.color = 0\
+	t.Radius = 90\
+	Unexpected Return Value:\
+	Any number not equal to above\
+	\
+No need to test the display method because we will see if it is correct when we run processing.\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97Tiles Test \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+def test_constructor():\
+	test if the list has been created and if the first four elements are those 4 tiles.\
+	Input:\
+ 	WIDTH = 400\
+	NUM = 4\
+	\
+	Expected: 4 tuples which mean the x coordinate and y coordinate for first 4 tiles.\
+	Unexpected: None or wrong tuples.\
+	\
+def test_display():\
+	test if the list has been created and if the first four elements are those 4 tiles.\
+	Input:\
+ 	WIDTH = 400\
+	NUM = 4\
+	\
+	Expected: 4 tuples which mean the x coordinate and y coordinate for first 4 tiles.\
+	Unexpected: None or wrong tuples.\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97GameController Test  \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+from tiles import Tiles\
+\
+def test_constructor(Board_num, NUM, tiles):\
+	Input:\
+ 	Board_size = 400\
+	NUM = 4\
+	GC = Gamecontroller(Board_size, NUM, tiles)\
+\
+	Expected: correct numbers have been assigned to correct attributes\
+	Unexpected: Wrong numbers\
+\
+def test_black_move(x, y):\
+	Input: x = 160, y =180\
+	\
+	Expected: GC.black_num = 1, GC.black_turn = False, GC.tile_lst[x//cell][y//cell] == (150, 150)\
+	Unexpected: Wrong answers\
+\
+def test_white_move(x, y):\
+	Input: x = 160, y =180\
+	\
+	Expected: GC.white_num = 1, GC.black_turn = True, GC.tile_lst[x//cell][y//cell] == (150, 150)\
+	Unexpected: Wrong answers\
+\
+def test_update():\
+	Input:\
+ 	Board_size = 400\
+	NUM = 4\
+	GC = Gamecontroller(Board_size, NUM, tiles)\
+	\
+	Expected: GC.black_num = GC.white_num (no new tile added so there should be 2 black tiles and 2 white tiles)\
+	Unexpected: GC.black_num != GC.white_num\
+	\
+}
